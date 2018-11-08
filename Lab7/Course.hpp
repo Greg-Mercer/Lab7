@@ -4,7 +4,7 @@
 using namespace std;
 struct Course {
 
-enum dayOfWeek {MON = 'M', TUE = 'T', WED = 'W', THUR = '?', FRI = 'F', SAT, SUN};
+enum dayOfWeek {MON = 'M', TUE = 'T', WED = 'W', THUR = 'R', FRI = 'F', SAT, SUN};
 
 Course (string title, dayOfWeek day, unsigned int start_time, unsigned int finish_time);
 Course (const Course & m);

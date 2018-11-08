@@ -42,7 +42,7 @@ int dayVal(Course::dayOfWeek d) {
         case 'M' : return 0;
         case 'T' : return 1;
         case 'W' : return 2;
-        case '?' : return 3;
+        case 'R' : return 3;
         case 'F' : return 4;
         default : return -1;
     }
