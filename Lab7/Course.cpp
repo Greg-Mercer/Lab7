@@ -30,15 +30,28 @@ bool Course::operator == (const Course & m) const {
 
 bool Course::operator < (const Course & m) const {
     if(this->day != m.day) {
-        return this->day < m.day;
+        return dayVal(this->day) > dayVal(m.day);
     } else {
-        return this->start_time < m.start_time;
+        return this->start_time > m.start_time;
     }
+}
+
+int dayVal(Course::dayOfWeek d) {
+
+    switch(d) {
+        case 'M' : return 0;
+        case 'T' : return 1;
+        case 'W' : return 2;
+        case '?' : return 3;
+        case 'F' : return 4;
+        default : return -1;
+    }
+
 }
 
 ostream & operator << (ostream &os, const Course & m) {
 
-    os << m.title << " " << m.day << " " << m.start_time << " " << m.finish_time << endl;
+    os << m.title << " " << string(1, m.day) << " " << m.start_time << " " << m.finish_time << endl;
 
     return os;
 }

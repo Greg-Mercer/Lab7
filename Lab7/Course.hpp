@@ -4,7 +4,7 @@
 using namespace std;
 struct Course {
 
-enum dayOfWeek {MON, TUE, WED, THUR, FRI, SAT, SUN};
+enum dayOfWeek {MON = 'M', TUE = 'T', WED = 'W', THUR = '?', FRI = 'F', SAT, SUN};
 
 Course (string title, dayOfWeek day, unsigned int start_time, unsigned int finish_time);
 Course (const Course & m);
@@ -22,3 +22,5 @@ unsigned int finish_time; // Course finish time in HHMM format
 ostream &operator << (ostream &os, const Course & m);
 
 void swap(Course& first, Course& second);
+
+int dayVal(Course::dayOfWeek d);
