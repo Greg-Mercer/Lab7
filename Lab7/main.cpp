@@ -14,7 +14,7 @@ using namespace std;
 
 /*
  * print schedule - outputs course schedule to the screen
- * @param - add any new parameters you need
+ * @param pq course list as a priority queue
  */
 void printSchedule(priority_queue<Course> pq) {
     while(!pq.empty()) {
@@ -23,6 +23,10 @@ void printSchedule(priority_queue<Course> pq) {
     }
 }
 
+/*
+ * Identifies and prints any scheduling conflicts for a given course list.
+ * @param pq course list as a priority queue
+ */
 void printConflicts(priority_queue<Course> pq) {
     vector<Course> courses{};
     while(!pq.empty()) {
