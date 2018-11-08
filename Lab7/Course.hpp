@@ -20,3 +20,5 @@ unsigned int finish_time; // Course finish time in HHMM format
 
 // Helper operator for output
 ostream &operator << (ostream &os, const Course & m);
+
+void swap(Course& first, Course& second);

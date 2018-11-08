@@ -10,22 +10,35 @@ Course::Course (const Course & m) : title (m.title), day (m.day), start_time (m.
 }
 
 Course & Course::operator =(const Course & m) {
-    //TODO implement the operator
+    Course temp(m);
+    swap(*this, temp);
     return *this;
 }
+
+void swap(Course& first, Course& second) {
+    using std::swap;
+    swap(first.title, second.title);
+    swap(first.day, second.day);
+    swap(first.start_time, second.start_time);
+    swap(first.finish_time, second.finish_time);
+}
+
 bool Course::operator == (const Course & m) const {
-    //TODO implement the operator
-    return false;
+    return this->title == m.title && this->day == m.day && this->start_time == m.start_time
+        && this->finish_time == m.finish_time;
 }
 
-bool Course::operator < (const Course & m) const
-{
-    //TODO implement the operator
-    return false;
+bool Course::operator < (const Course & m) const {
+    if(this->day != m.day) {
+        return this->day < m.day;
+    } else {
+        return this->start_time < m.start_time;
+    }
 }
 
-ostream & operator << (ostream &os, const Course & m)
-{
-    //TODO implement the operator
+ostream & operator << (ostream &os, const Course & m) {
+
+    os << m.title << " " << m.day << " " << m.start_time << " " << m.finish_time << endl;
+
     return os;
 }
